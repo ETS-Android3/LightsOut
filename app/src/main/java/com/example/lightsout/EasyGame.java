@@ -93,5 +93,8 @@ public class EasyGame extends AppCompatActivity {
                 break;
         }
         game.updateView();
+        if (game.hasWon()){
+            Toast.makeText(getApplicationContext(),"You've won! Maybe you should give Medium difficulty a try?",Toast.LENGTH_LONG).show();
+        }
     }
 }

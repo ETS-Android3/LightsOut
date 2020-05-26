@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case R.id.button3:
+                Intent intent3 = new Intent(MainActivity.this, HardGame.class);
+                startActivity(intent3);
                 break;
         }
     }

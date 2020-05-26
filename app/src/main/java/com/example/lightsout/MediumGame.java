@@ -128,5 +128,8 @@ public class MediumGame extends AppCompatActivity {
                 break;
         }
         game.updateView();
+        if (game.hasWon()){
+            Toast.makeText(getApplicationContext(),"You've won! Are you ready to give Hard a try?",Toast.LENGTH_LONG).show();
+        }
     }
 }
