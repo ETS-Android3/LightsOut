@@ -33,8 +33,6 @@ public class EasyGame extends AppCompatActivity {
         buttons[3][2] = (ImageButton) findViewById(R.id.imageButton15);
         buttons[3][3] = (ImageButton) findViewById(R.id.imageButton16);
 
-        Toast.makeText(getApplicationContext(),"game initialized", Toast.LENGTH_SHORT).show();
-
         game = new GameController(buttons);
     }
 
@@ -94,7 +92,6 @@ public class EasyGame extends AppCompatActivity {
                 game.updateView();
                 break;
         }
-        Toast.makeText(getApplicationContext(),"clicked", Toast.LENGTH_SHORT).show();
         game.updateView();
     }
 }

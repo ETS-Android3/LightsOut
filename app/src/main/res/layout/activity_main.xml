@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292929"
+    android:background="#00405c"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#292929"
+        android:background="#00405c"
         android:foregroundGravity="center"
         android:gravity="center"
         android:orientation="vertical">
@@ -22,7 +22,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="Lights Out!"
-            android:textColor="#DF9D00"
+            android:textColor="#FFFFFF"
             android:textSize="49sp"
             android:textStyle="bold" />
 
@@ -33,8 +33,12 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="Your goal is to turn off the lights. However, each light you turn off will toggle the ones beside it. Are you able to turn off all the lights?"
-            android:textColor="#DF9D00"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="6dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -73,6 +77,23 @@
                 android:onClick="onClick"
                 android:text="Hard" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Check out my website for other cool projects!"
+            android:textColor="#53FFFFFF" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:gravity="center"
+            android:text="Visit https://www.seanstilwell.ca"
+            android:textColor="#53FFFFFF" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

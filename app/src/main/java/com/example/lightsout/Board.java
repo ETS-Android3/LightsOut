@@ -14,7 +14,7 @@ public class Board {
                 board[i][j].setOn(true);
                 board[i][j].setActive(true);
                 // A cell has a somewhat random probability of being active or not.
-                double probability = 0.05;
+                double probability = 0.1;
                 if (i == 0 || i == board.length - 1 || j == 0 || j == board[i].length - 1) {
                     probability = probability + 0.2;
                 }
