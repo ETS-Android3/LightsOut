@@ -9,6 +9,10 @@ public class Cell {
         isActive = active;
         isOn = lit;
     }
+    public Cell(){
+        isActive = false;
+        isOn = false;
+    }
 
     // Toggles the light after it (or an adjacent one) is clicked.
     public void toggleLight(){
@@ -34,5 +38,10 @@ public class Cell {
     }
     public void setOn(boolean var){
         isOn = var;
+    }
+
+    public String toString(){
+        String s = "(" + Boolean.toString(isActive) + ", " + Boolean.toString(isOn) + ")";
+        return s;
     }
 }

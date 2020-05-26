@@ -8,20 +8,28 @@ public class Board {
         board = new Cell[height][width];
 
         // We then iterate through the board and decide whether each cell should be active.
-        for (int i = 0; i < board.length; i++){
-            for (int j = 0; j < board[i].length; j++){
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = new Cell();
                 board[i][j].setOn(true);
+                board[i][j].setActive(true);
                 // A cell has a somewhat random probability of being active or not.
                 double probability = 0.05;
-                if (i == 0 || i == board.length - 1 || j == 0 || j == board[i].length){
+                if (i == 0 || i == board.length - 1 || j == 0 || j == board[i].length - 1) {
                     probability = probability + 0.2;
                 }
-                if (Math.random() < probability){
+                if (Math.random() < probability) {
                     board[i][j].setActive(false);
                 }
             }
         }
     }
+
+    public Cell[][] getBoard(){
+        return board;
+    }
+
+    public Cell getPos(int i, int j) { return board[i][j];}
 
     // If a button is clicked, we must toggle the adjacent ones too.
     public void click(int height, int width){
@@ -53,5 +61,17 @@ public class Board {
             }
         }
         return true;
+    }
+
+    // Randomly toggles lights
+    public void randomize(){
+        for (int i = 0; i < board.length; i++){
+            for (int j = 0; j < board[i].length; j++) {
+                double probability = 0.35;
+                if (Math.random() < probability && board[i][j].getActive()) {
+                    board[i][j].toggleLight();
+                }
+            }
+        }
     }
 }
