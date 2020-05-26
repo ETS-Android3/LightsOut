@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00405c"
+    android:background="#003775"
     tools:context=".MediumGame">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#003775"
         android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
@@ -24,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -36,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -48,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -60,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -72,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -82,6 +84,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
@@ -90,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -102,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -114,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -126,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -138,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -148,6 +151,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
@@ -156,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -168,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -180,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -192,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -204,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -214,6 +218,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
@@ -222,7 +227,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -234,7 +239,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -246,7 +251,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -258,7 +263,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -270,7 +275,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -280,6 +285,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
@@ -288,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -300,7 +306,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -312,7 +318,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -324,7 +330,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"
@@ -336,7 +342,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:background="#00405c"
+                android:background="#003775"
                 android:cropToPadding="false"
                 android:onClick="onClick"
                 android:scaleType="fitCenter"

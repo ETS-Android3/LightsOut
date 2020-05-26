@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00405c"
+    android:background="#8f001a"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00405c"
+        android:background="#003775"
         android:foregroundGravity="center"
         android:gravity="center"
         android:orientation="vertical">
