@@ -570,80 +570,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#003775"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton84"
+            <TextView
+                android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
+                android:gravity="right"
+                android:text="Moves:  "
+                android:textColor="#FFFFFF" />
 
-            <ImageButton
-                android:id="@+id/imageButton85"
+            <TextView
+                android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
+                android:text="XX"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
 
-            <ImageButton
-                android:id="@+id/imageButton86"
+            <TextView
+                android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
+                android:gravity="right"
+                android:text="Goal:  "
+                android:textColor="#FFFFFF" />
 
-            <ImageButton
-                android:id="@+id/imageButton87"
+            <TextView
+                android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-
-            <ImageButton
-                android:id="@+id/imageButton88"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-
-            <ImageButton
-                android:id="@+id/imageButton89"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:cropToPadding="false"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
+                android:text="XX"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
 
         </LinearLayout>
 

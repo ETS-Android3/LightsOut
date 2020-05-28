@@ -21,11 +21,13 @@ I originally made this game as part of an Intro to Computing class in Swing, alo
 
 * A graphical user interface to display the ongoing game.
 
+* Keeps track of moves with a challenge number of moves to achieve.
+
 * Easy, Medium, and Hard difficulties, each with a different sized grid.
 
-* Ability to create new puzzles as desired.
+* Ability to create new puzzles as desired (either when giving up or finishing a puzzle)
 
-* Determines when a game has been won.
+* Determines when a game has been won and gives a congratulations.
 
 ## Play!
 

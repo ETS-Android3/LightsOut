@@ -2,17 +2,20 @@ package com.example.lightsout;
 
 public class Board {
     private Cell[][] board;
+    private int minMoves;
+    private int moves;
 
     // Constructor
     public Board(int height, int width){
         board = new Cell[height][width];
+        minMoves = 0;
 
         // We then iterate through the board and decide whether each cell should be active.
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 board[i][j] = new Cell();
-                board[i][j].setOn(true);
                 board[i][j].setActive(true);
+                board[i][j].setOn(false);
                 // A cell has a somewhat random probability of being active or not.
                 double probability = 0.1;
                 if (i == 0 || i == board.length - 1 || j == 0 || j == board[i].length - 1) {
@@ -25,6 +28,10 @@ public class Board {
         }
     }
 
+    public int getMinMoves(){return minMoves;}
+
+    public int getMoves(){return moves;}
+
     public Cell[][] getBoard(){
         return board;
     }
@@ -36,18 +43,21 @@ public class Board {
         if (height >= board.length || width >= board[0].length){
             throw new IllegalArgumentException();
         }
-        board[height][width].toggleLight();
-        if (height - 1 >= 0){
-            board[height - 1][width].toggleLight();
-        }
-        if (height + 1 < board.length){
-            board[height + 1][width].toggleLight();
-        }
-        if (width - 1 >= 0){
-            board[height][width - 1].toggleLight();
-        }
-        if (width + 1 < board[0].length){
-            board[height][width + 1].toggleLight();
+        if (board[height][width].getActive()) {
+            board[height][width].toggleLight();
+            if (height - 1 >= 0 && board[height - 1][width].getActive()) {
+                board[height - 1][width].toggleLight();
+            }
+            if (height + 1 < board.length && board[height + 1][width].getActive()) {
+                board[height + 1][width].toggleLight();
+            }
+            if (width - 1 >= 0 && board[height][width - 1].getActive()) {
+                board[height][width - 1].toggleLight();
+            }
+            if (width + 1 < board[0].length && board[height][width+1].getActive()) {
+                board[height][width + 1].toggleLight();
+            }
+            moves++;
         }
     }
 
@@ -65,13 +75,19 @@ public class Board {
 
     // Randomly toggles lights
     public void randomize(){
+        minMoves = 0;
         for (int i = 0; i < board.length; i++){
             for (int j = 0; j < board[i].length; j++) {
-                double probability = 0.35;
-                if (Math.random() < probability && board[i][j].getActive()) {
-                    board[i][j].toggleLight();
+                if (board[i][j].getActive()) {
+                    double probability = 0.65;
+                    if(Math.random() < probability){
+                        click(i,j);
+                        minMoves++;
+                    }
                 }
             }
         }
+        moves = 0;
+        minMoves = minMoves + 3;
     }
 }

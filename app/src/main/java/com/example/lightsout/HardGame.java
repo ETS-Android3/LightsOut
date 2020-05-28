@@ -5,18 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HardGame extends AppCompatActivity {
     GameController game;
     ImageButton[][] buttons;
+    TextView moves;
+    TextView minMoves;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard_game);
 
-        buttons = new ImageButton[8][6];
+        buttons = new ImageButton[7][6];
         buttons[0][0] = (ImageButton) findViewById(R.id.imageButton42);
         buttons[0][1] = (ImageButton) findViewById(R.id.imageButton43);
         buttons[0][2] = (ImageButton) findViewById(R.id.imageButton44);
@@ -66,14 +69,10 @@ public class HardGame extends AppCompatActivity {
         buttons[6][4] = (ImageButton) findViewById(R.id.imageButton82);
         buttons[6][5] = (ImageButton) findViewById(R.id.imageButton83);
 
-        buttons[7][0] = (ImageButton) findViewById(R.id.imageButton84);
-        buttons[7][1] = (ImageButton) findViewById(R.id.imageButton85);
-        buttons[7][2] = (ImageButton) findViewById(R.id.imageButton86);
-        buttons[7][3] = (ImageButton) findViewById(R.id.imageButton87);
-        buttons[7][4] = (ImageButton) findViewById(R.id.imageButton88);
-        buttons[7][5] = (ImageButton) findViewById(R.id.imageButton89);
+        moves = (TextView) findViewById(R.id.textView11);
+        minMoves = (TextView) findViewById(R.id.textView13);
 
-        game = new GameController(buttons);
+        game = new GameController(buttons, moves, minMoves);
         game.updateView();
     }
 
@@ -206,32 +205,14 @@ public class HardGame extends AppCompatActivity {
             case R.id.imageButton83:
                 game.click(6, 5);
                 break;
-            case R.id.imageButton84:
-                game.click(7, 0);
-                break;
-            case R.id.imageButton85:
-                game.click(7, 1);
-                break;
-            case R.id.imageButton86:
-                game.click(7, 2);
-                break;
-            case R.id.imageButton87:
-                game.click(7, 3);
-                break;
-            case R.id.imageButton88:
-                game.click(7, 4);
-                break;
-            case R.id.imageButton89:
-                game.click(7, 5);
-                break;
             case R.id.button7:
-                game = new GameController(buttons);
+                game = new GameController(buttons, moves, minMoves);
                 game.updateView();
                 break;
         }
         game.updateView();
         if (game.hasWon()){
-            Toast.makeText(getApplicationContext(),"You've won! You really are a master of this game.",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }
 }

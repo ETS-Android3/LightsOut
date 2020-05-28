@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EasyGame extends AppCompatActivity {
     GameController game;
     ImageButton[][] buttons;
+    TextView moves;
+    TextView minMoves;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +35,10 @@ public class EasyGame extends AppCompatActivity {
         buttons[3][1] = (ImageButton) findViewById(R.id.imageButton14);
         buttons[3][2] = (ImageButton) findViewById(R.id.imageButton15);
         buttons[3][3] = (ImageButton) findViewById(R.id.imageButton16);
+        moves = (TextView) findViewById(R.id.textView11);
+        minMoves = (TextView) findViewById(R.id.textView13);
 
-        game = new GameController(buttons);
+        game = new GameController(buttons, moves, minMoves);
     }
 
     public void onClick(View v) {
@@ -88,13 +93,13 @@ public class EasyGame extends AppCompatActivity {
                 game.click(3,3);
                 break;
             case R.id.button4:
-                game = new GameController(buttons);
+                game = new GameController(buttons, moves, minMoves);
                 game.updateView();
                 break;
         }
         game.updateView();
         if (game.hasWon()){
-            Toast.makeText(getApplicationContext(),"You've won! Maybe you should give Medium difficulty a try?",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }
 }
