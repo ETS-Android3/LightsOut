@@ -1,6 +1,6 @@
 # Lights Out! Mobile Game
 
-[![Foo](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.game.lightsout)
+[![Foo](images/google-play-badge-small.png)](https://play.google.com/store/apps/details?id=app.game.lightsout)
 
 A mobile application based on the [classic puzzle](https://en.wikipedia.org/wiki/Lights_Out_(game)), along with a variety of new and challenging changes.
 
@@ -33,6 +33,6 @@ I originally made this game as part of an Intro to Computing class in Swing, alo
 
 ## Play!
 
-[![Foo](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=app.game.lightsout)
+[![Foo](images/google-play-badge-small.png)](https://play.google.com/store/apps/details?id=app.game.lightsout)
 
 This game is available for download on Android devices on [Google Play](https://play.google.com/store/apps/details?id=app.game.lightsout)
