@@ -1,4 +1,4 @@
-package com.example.lightsout;
+package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import app.game.lightsout.R;
 
 public class MediumGame extends AppCompatActivity {
     GameController game;

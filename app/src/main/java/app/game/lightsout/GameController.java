@@ -1,11 +1,10 @@
-package com.example.lightsout;
+package app.game.lightsout;
 
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import app.game.lightsout.R;
 
 public class GameController {
     Board board;

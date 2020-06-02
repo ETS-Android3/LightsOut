@@ -1,4 +1,4 @@
-package com.example.lightsout;
+package app.game.lightsout;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.lightsout", appContext.getPackageName());
+        assertEquals("com.game.lightsout", appContext.getPackageName());
     }
 }

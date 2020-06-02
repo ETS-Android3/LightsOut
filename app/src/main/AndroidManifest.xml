@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lightsout">
+    package="app.game.lightsout">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_new"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HardGame"></activity>
-        <activity android:name=".MediumGame" />
-        <activity android:name=".EasyGame" />
-        <activity android:name=".MainActivity">
+        <activity android:name="app.game.lightsout.HardGame"></activity>
+        <activity android:name="app.game.lightsout.MediumGame" />
+        <activity android:name="app.game.lightsout.EasyGame" />
+        <activity android:name="app.game.lightsout.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,10 +1,12 @@
-package com.example.lightsout;
+package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import app.game.lightsout.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.lightsout;
+package app.game.lightsout;
 
 import org.junit.Test;
 

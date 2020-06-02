@@ -1,4 +1,4 @@
-package com.example.lib;
+package app.game.lib;
 
 public class Tester {
 }
