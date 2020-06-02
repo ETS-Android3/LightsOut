@@ -242,7 +242,8 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="Moves:  "
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="21sp" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -251,6 +252,7 @@
                 android:layout_weight="1"
                 android:text="XX"
                 android:textColor="#FFFFFF"
+                android:textSize="21sp"
                 android:textStyle="italic" />
 
             <TextView
@@ -260,7 +262,8 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="Goal:  "
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="21sp" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -269,6 +272,7 @@
                 android:layout_weight="1"
                 android:text="XX"
                 android:textColor="#FFFFFF"
+                android:textSize="21sp"
                 android:textStyle="italic" />
         </LinearLayout>
 
