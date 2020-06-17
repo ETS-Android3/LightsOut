@@ -2,6 +2,7 @@ package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,6 +16,7 @@ public class MediumGame extends AppCompatActivity {
     ImageButton[][] buttons;
     TextView moves;
     TextView minMoves;
+    MediaPlayer mpWin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class MediumGame extends AppCompatActivity {
         buttons[4][4] = (ImageButton) findViewById(R.id.imageButton41);
         moves = (TextView) findViewById(R.id.textView11);
         minMoves = (TextView) findViewById(R.id.textView13);
+        mpWin = MediaPlayer.create(this, R.raw.tada);
         game = new GameController(buttons, moves, minMoves);
     }
 
@@ -131,11 +134,19 @@ public class MediumGame extends AppCompatActivity {
                 break;
             case R.id.button6:
                 game = new GameController(buttons, moves, minMoves);
+                while (game.hasWon()){
+                    game = new GameController(buttons, moves, minMoves);
+                }
+                game.updateView();
+                break;
+            case R.id.button10:
+                game.retryBoard();
                 game.updateView();
                 break;
         }
         game.updateView();
         if (game.hasWon()){
+            mpWin.start();
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }

@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="app.game.lightsout.HardGame"></activity>
-        <activity android:name="app.game.lightsout.MediumGame" />
-        <activity android:name="app.game.lightsout.EasyGame" />
-        <activity android:name="app.game.lightsout.MainActivity">
+        <activity android:name=".PuzzleOfTheDay"></activity>
+        <activity android:name=".HardGame" />
+        <activity android:name=".MediumGame" />
+        <activity android:name=".EasyGame" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

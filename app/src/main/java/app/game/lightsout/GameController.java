@@ -8,6 +8,7 @@ import app.game.lightsout.R;
 
 public class GameController {
     Board board;
+    Board copyOfBoard;
     Cell[][] cells;
     ImageButton[][] buttons;
     TextView moves;
@@ -17,6 +18,16 @@ public class GameController {
         buttons = buttonsArray;
         board = new Board(buttons.length, buttons[0].length);
         board.randomize();
+        copyOfBoard = new Board(board);
+        this.moves = moves;
+        this.minMoves = minMoves;
+        updateView();
+    }
+
+    public GameController(ImageButton[][] buttonsArray, TextView moves, TextView minMoves, Board board){
+        buttons = buttonsArray;
+        this.board = board;
+        copyOfBoard = new Board(board);
         this.moves = moves;
         this.minMoves = minMoves;
         updateView();
@@ -49,6 +60,19 @@ public class GameController {
     public void click(int i, int j){
         board.click(i,j);
         updateView();
+    }
+
+    public int getMoves(){
+        return board.getMoves();
+    }
+
+    public void retryBoard(){
+        board = copyOfBoard;
+        copyOfBoard = new Board(copyOfBoard);
+    }
+
+    public void setMoves(int moves){
+        board.setMoves(moves);
     }
 
     public boolean hasWon(){

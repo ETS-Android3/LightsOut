@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(MainActivity.this, HardGame.class);
                 startActivity(intent3);
                 break;
+            case R.id.button8:
+                Intent intent4 = new Intent(MainActivity.this, PuzzleOfTheDay.class);
+                startActivity(intent4);
+                break;
             case R.id.button5:
                 // TODO Auto-generated method stub
                 final String myappPackageName = getPackageName(); // getPackageName() from Context or Activity object

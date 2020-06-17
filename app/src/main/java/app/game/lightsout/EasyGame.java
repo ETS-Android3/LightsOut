@@ -2,6 +2,7 @@ package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,6 +16,7 @@ public class EasyGame extends AppCompatActivity {
     ImageButton[][] buttons;
     TextView moves;
     TextView minMoves;
+    MediaPlayer mpWin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class EasyGame extends AppCompatActivity {
         buttons[3][3] = (ImageButton) findViewById(R.id.imageButton16);
         moves = (TextView) findViewById(R.id.textView11);
         minMoves = (TextView) findViewById(R.id.textView13);
-
+        mpWin = MediaPlayer.create(this, R.raw.tada);
         game = new GameController(buttons, moves, minMoves);
     }
 
@@ -96,11 +98,19 @@ public class EasyGame extends AppCompatActivity {
                 break;
             case R.id.button4:
                 game = new GameController(buttons, moves, minMoves);
+                while (game.hasWon()){
+                    game = new GameController(buttons, moves, minMoves);
+                }
+                game.updateView();
+                break;
+            case R.id.button9:
+                game.retryBoard();
                 game.updateView();
                 break;
         }
         game.updateView();
         if (game.hasWon()){
+            mpWin.start();
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }

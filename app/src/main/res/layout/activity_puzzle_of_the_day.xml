@@ -5,23 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#003775"
-    tools:context="app.game.lightsout.EasyGame">
+    tools:context=".PuzzleOfTheDay">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#003775"
         android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButton84"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -33,7 +31,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButton85"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -45,7 +43,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButton86"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +55,19 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButton87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton104"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,62 +82,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="#003775"
-                android:onClick="onClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/nolight2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#003775"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imageButton88"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -139,7 +97,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/imageButton89"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -151,7 +109,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton11"
+                android:id="@+id/imageButton90"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -163,7 +121,19 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton12"
+                android:id="@+id/imageButton91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton105"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -178,11 +148,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#003775"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton13"
+                android:id="@+id/imageButton92"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -194,7 +163,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton14"
+                android:id="@+id/imageButton93"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -206,7 +175,7 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton15"
+                android:id="@+id/imageButton94"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -218,7 +187,151 @@
                 app:srcCompat="@drawable/nolight2" />
 
             <ImageButton
-                android:id="@+id/imageButton16"
+                android:id="@+id/imageButton95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton106"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton97"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton98"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton99"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton107"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton101"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton102"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton103"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="#003775"
+                android:cropToPadding="false"
+                android:onClick="onClick"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/nolight2" />
+
+            <ImageButton
+                android:id="@+id/imageButton108"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -243,7 +356,7 @@
                 android:gravity="right"
                 android:text="Moves:  "
                 android:textColor="#FFFFFF"
-                android:textSize="21sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -252,7 +365,7 @@
                 android:layout_weight="1"
                 android:text="XX"
                 android:textColor="#FFFFFF"
-                android:textSize="21sp"
+                android:textSize="18sp"
                 android:textStyle="italic" />
 
             <TextView
@@ -263,7 +376,7 @@
                 android:gravity="right"
                 android:text="Goal:  "
                 android:textColor="#FFFFFF"
-                android:textSize="21sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -272,8 +385,9 @@
                 android:layout_weight="1"
                 android:text="XX"
                 android:textColor="#FFFFFF"
-                android:textSize="21sp"
+                android:textSize="18sp"
                 android:textStyle="italic" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -283,18 +397,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/button10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onClick"
                 android:text="Retry Puzzle" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onClick"
-                android:text="New Puzzle" />
         </LinearLayout>
 
     </LinearLayout>
