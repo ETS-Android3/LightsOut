@@ -6,6 +6,8 @@ An Android mobile game based on the [classic puzzle](https://en.wikipedia.org/wi
 
 The goal of the game is deceptively simple: Turn off all the lights on the board. The challenging twist is that clicking one light will toggle the others, leaving you with a mess of lights. Sometimes there is only one possible solution (there is always at least one!).
 
+Additional technical information can be found in the TECHNICAL_INFO.md file.
+
 ## Screenshot
 
 The UI of the game, featuring both an easy and hard game underway. On the UI, there is a move counter, as well as an achievable goal for the user to meet. The user also has an option to reset the board to its starting position, or to create a new puzzle.
