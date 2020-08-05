@@ -10,9 +10,7 @@ The goal of the game is deceptively simple: Turn off all the lights on the board
 
 The UI of the game, featuring both an easy and hard game underway. On the UI, there is a move counter, as well as an achievable goal for the user to meet. The user also has an option to reset the board to its starting position, or to create a new puzzle.
 
-![Image of Easy Gameplay](images/Capture.PNG)
-
-![Image of Hard Gameplay](images/Capture2.PNG)
+![Image of Easy Gameplay](images/Capture.PNG) ![Image of Hard Gameplay](images/Capture2.PNG)
 
 ## How to Play
 
