@@ -22,6 +22,7 @@ public class EasyGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy_game);
 
+        // Initializes the button array
         buttons = new ImageButton[4][4];
         buttons[0][0] = (ImageButton) findViewById(R.id.imageButton);
         buttons[0][1] = (ImageButton) findViewById(R.id.imageButton2);
@@ -45,9 +46,14 @@ public class EasyGame extends AppCompatActivity {
         game = new GameController(buttons, moves, minMoves);
     }
 
+    /**
+     * Occurs when any button is clicked. Determines what button was chosen and performs a related action.
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             // We determine which button was selected and insert the current user there.
+            // The first set is buttons on the game board, which clicks their corresponding button
             case R.id.imageButton:
                 game.click(0,0);
                 break;
@@ -96,21 +102,21 @@ public class EasyGame extends AppCompatActivity {
             case R.id.imageButton16:
                 game.click(3,3);
                 break;
-            case R.id.button4:
+            case R.id.button4: // Button to create a new puzzle (giving up)
                 game = new GameController(buttons, moves, minMoves);
-                while (game.hasWon()){
+                while (game.hasWon()){ // Ensures a winning puzzle isn't used.
                     game = new GameController(buttons, moves, minMoves);
                 }
-                game.updateView();
+                game.updateView(); // Updates the view
                 break;
-            case R.id.button9:
+            case R.id.button9: // Button to retry the puzzle.
                 game.retryBoard();
-                game.updateView();
+                game.updateView(); // Updates the view
                 break;
         }
         game.updateView();
-        if (game.hasWon()){
-            mpWin.start();
+        if (game.hasWon()){ // If the user wins, a message is displayed.
+            mpWin.start(); // Plays a sound.
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }

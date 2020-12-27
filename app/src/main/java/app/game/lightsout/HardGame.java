@@ -23,6 +23,7 @@ public class HardGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard_game);
 
+        // Initializes the button array
         buttons = new ImageButton[7][6];
         buttons[0][0] = (ImageButton) findViewById(R.id.imageButton42);
         buttons[0][1] = (ImageButton) findViewById(R.id.imageButton43);
@@ -81,9 +82,14 @@ public class HardGame extends AppCompatActivity {
         game.updateView();
     }
 
+    /**
+     * Occurs when any button is clicked. Determines what button was chosen and performs a related action.
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             // We determine which button was selected and insert the current user there.
+            // The first set is buttons on the game board, which clicks their corresponding button
             case R.id.imageButton42:
                 game.click(0, 0);
                 break;
@@ -210,21 +216,21 @@ public class HardGame extends AppCompatActivity {
             case R.id.imageButton83:
                 game.click(6, 5);
                 break;
-            case R.id.button7:
+            case R.id.button7:// Button to create a new puzzle (giving up)
                 game = new GameController(buttons, moves, minMoves);
-                while (game.hasWon()){
+                while (game.hasWon()){ // Ensures a winning puzzle isn't used.
                     game = new GameController(buttons, moves, minMoves);
                 }
-                game.updateView();
+                game.updateView(); // Updates the view
                 break;
-            case R.id.button11:
+            case R.id.button11: // Button to retry the puzzle
                 game.retryBoard();
                 game.updateView();
                 break;
         }
         game.updateView();
-        if (game.hasWon()){
-            mpWin.start();
+        if (game.hasWon()){ // If the user wins, a message is displayed.
+            mpWin.start(); // Plays a sound.
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }

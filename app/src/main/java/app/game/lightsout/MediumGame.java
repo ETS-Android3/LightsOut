@@ -22,6 +22,8 @@ public class MediumGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medium_game);
+        
+        // Initializes the button array
         buttons = new ImageButton[5][5];
         buttons[0][0] = (ImageButton) findViewById(R.id.imageButton17);
         buttons[0][1] = (ImageButton) findViewById(R.id.imageButton18);
@@ -54,9 +56,14 @@ public class MediumGame extends AppCompatActivity {
         game = new GameController(buttons, moves, minMoves);
     }
 
+    /**
+     * Occurs when any button is clicked. Determines what button was chosen and performs a related action.
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             // We determine which button was selected and insert the current user there.
+            // The first set is buttons on the game board, which clicks their corresponding button
             case R.id.imageButton17:
                 game.click(0, 0);
                 break;
@@ -99,7 +106,7 @@ public class MediumGame extends AppCompatActivity {
             case R.id.imageButton30:
                 game.click(2, 3);
                 break;
-            case R.id.imageButton31: // it was at this moment that i realized i could have used a map
+            case R.id.imageButton31:
                 game.click(2, 4);
                 break;
             case R.id.imageButton32:
@@ -132,21 +139,21 @@ public class MediumGame extends AppCompatActivity {
             case R.id.imageButton41:
                 game.click(4, 4);
                 break;
-            case R.id.button6:
+            case R.id.button6: // Button to create a new puzzle (giving up)
                 game = new GameController(buttons, moves, minMoves);
-                while (game.hasWon()){
+                while (game.hasWon()){ // Ensures a winning puzzle isn't used
                     game = new GameController(buttons, moves, minMoves);
                 }
-                game.updateView();
+                game.updateView(); // Updates the view
                 break;
-            case R.id.button10:
+            case R.id.button10: // Retries the game
                 game.retryBoard();
                 game.updateView();
                 break;
         }
         game.updateView();
-        if (game.hasWon()){
-            mpWin.start();
+        if (game.hasWon()){ // Occurs if a game is won
+            mpWin.start(); // Plays a sound.
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }

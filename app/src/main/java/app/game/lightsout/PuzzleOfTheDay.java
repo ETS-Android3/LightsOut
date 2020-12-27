@@ -22,6 +22,8 @@ public class PuzzleOfTheDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle_of_the_day);
+
+        // Initializes the button array
         buttons = new ImageButton[5][5];
         buttons[0][0] = (ImageButton) findViewById(R.id.imageButton84);
         buttons[0][1] = (ImageButton) findViewById(R.id.imageButton85);
@@ -56,9 +58,14 @@ public class PuzzleOfTheDay extends AppCompatActivity {
         game = new GameController(buttons, moves, minMoves, board);
     }
 
+    /**
+     * Occurs when any button is clicked. Determines what button was chosen and performs a related action.
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             // We determine which button was selected and insert the current user there.
+            // The first set is buttons on the game board, which clicks their corresponding button
             case R.id.imageButton84:
                 game.click(0, 0);
                 break;
@@ -134,15 +141,15 @@ public class PuzzleOfTheDay extends AppCompatActivity {
             case R.id.imageButton108:
                 game.click(4, 4);
                 break;
-            case R.id.button10:
+            case R.id.button10:// Button to create a new puzzle (giving up)
                 int moves = game.getMoves();
                 game.retryBoard();
                 game.updateView();
                 break;
         }
         game.updateView();
-        if (game.hasWon()){
-            mpWin.start();
+        if (game.hasWon()){ // If the user wins, a message is displayed.
+            mpWin.start(); // Plays a sound.
             Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
         }
     }
