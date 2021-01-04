@@ -2,6 +2,8 @@ package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +19,16 @@ public class MediumGame extends AppCompatActivity {
     TextView moves;
     TextView minMoves;
     MediaPlayer mpWin;
+    TextView points;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medium_game);
+
+        SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+        score = prefs.getInt("points", 0); // Retrieves the user's current score
         
         // Initializes the button array
         buttons = new ImageButton[5][5];
@@ -52,8 +59,9 @@ public class MediumGame extends AppCompatActivity {
         buttons[4][4] = (ImageButton) findViewById(R.id.imageButton41);
         moves = (TextView) findViewById(R.id.textView11);
         minMoves = (TextView) findViewById(R.id.textView13);
+        points = (TextView) findViewById(R.id.textView8);
         mpWin = MediaPlayer.create(this, R.raw.tada);
-        game = new GameController(buttons, moves, minMoves);
+        game = new GameController(buttons, moves, minMoves, points, score);
     }
 
     /**
@@ -140,9 +148,9 @@ public class MediumGame extends AppCompatActivity {
                 game.click(4, 4);
                 break;
             case R.id.button6: // Button to create a new puzzle (giving up)
-                game = new GameController(buttons, moves, minMoves);
+                game = new GameController(buttons, moves, minMoves, points, score);
                 while (game.hasWon()){ // Ensures a winning puzzle isn't used
-                    game = new GameController(buttons, moves, minMoves);
+                    game = new GameController(buttons, moves, minMoves, points, score);
                 }
                 game.updateView(); // Updates the view
                 break;
@@ -151,10 +159,23 @@ public class MediumGame extends AppCompatActivity {
                 game.updateView();
                 break;
         }
-        game.updateView();
         if (game.hasWon()){ // Occurs if a game is won
             mpWin.start(); // Plays a sound.
-            Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
+            SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+
+            int score = prefs.getInt("points", 0); // Retrieves the user's current score
+            score = score + 25 + game.getBonusPoints(); // 25 points are awarded by default, with 5 extra for beating under the minimum number of moves
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("points", score); // Replaces the score with the increased amount.
+            editor.commit();
+
+            // Displays a message based on the user's moves
+            if (game.getBonusPoints() > 0){ Toast.makeText(getApplicationContext(),"You beat this Medium level within the minimum number of moves! +30 points.",Toast.LENGTH_LONG).show(); }
+            else { Toast.makeText(getApplicationContext(),"You beat this Medium level! +25 points.",Toast.LENGTH_LONG).show(); }
+
+            this.score = score;
+            game.updatePoints(score);
         }
+        game.updateView();
     }
 }

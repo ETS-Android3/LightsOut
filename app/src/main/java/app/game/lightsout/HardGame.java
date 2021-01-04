@@ -2,6 +2,8 @@ package app.game.lightsout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +19,17 @@ public class HardGame extends AppCompatActivity {
     TextView moves;
     TextView minMoves;
     MediaPlayer mpWin;
+    TextView points;
+    int score;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard_game);
+
+        SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+        score = prefs.getInt("points", 0); // Retrieves the user's current score
 
         // Initializes the button array
         buttons = new ImageButton[7][6];
@@ -75,10 +83,11 @@ public class HardGame extends AppCompatActivity {
         buttons[6][5] = (ImageButton) findViewById(R.id.imageButton83);
 
         moves = (TextView) findViewById(R.id.textView11);
+        points = (TextView) findViewById(R.id.textView6);
         minMoves = (TextView) findViewById(R.id.textView13);
         mpWin = MediaPlayer.create(this, R.raw.tada);
 
-        game = new GameController(buttons, moves, minMoves);
+        game = new GameController(buttons, moves, minMoves, points, score);
         game.updateView();
     }
 
@@ -217,9 +226,9 @@ public class HardGame extends AppCompatActivity {
                 game.click(6, 5);
                 break;
             case R.id.button7:// Button to create a new puzzle (giving up)
-                game = new GameController(buttons, moves, minMoves);
+                game = new GameController(buttons, moves, minMoves, points, score);
                 while (game.hasWon()){ // Ensures a winning puzzle isn't used.
-                    game = new GameController(buttons, moves, minMoves);
+                    game = new GameController(buttons, moves, minMoves, points, score);
                 }
                 game.updateView(); // Updates the view
                 break;
@@ -228,10 +237,21 @@ public class HardGame extends AppCompatActivity {
                 game.updateView();
                 break;
         }
-        game.updateView();
         if (game.hasWon()){ // If the user wins, a message is displayed.
             mpWin.start(); // Plays a sound.
-            Toast.makeText(getApplicationContext(),game.getWinMessage(),Toast.LENGTH_LONG).show();
+            SharedPreferences prefs = this.getSharedPreferences("prefsKey", Context.MODE_PRIVATE);
+            int score = prefs.getInt("points", 0); // Retrieves the user's current score
+
+            score = score + 50 + game.getBonusPoints(); // 50 points are awarded by default, with 5 extra for beating under the minimum number of moves
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt("points", score); // Replaces the score with the increased amount.
+            editor.commit();
+
+            if (game.getBonusPoints() > 0){ Toast.makeText(getApplicationContext(),"You beat this Hard level within the minimum number of moves! +50 points.",Toast.LENGTH_LONG).show(); }
+            else { Toast.makeText(getApplicationContext(),"You beat this Hard level! +55 points.",Toast.LENGTH_LONG).show(); }
+            this.score = score;
+            game.updatePoints(score);
         }
+        game.updateView();
     }
 }

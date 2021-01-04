@@ -388,6 +388,26 @@
                 android:textSize="18sp"
                 android:textStyle="italic" />
 
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Points: "
+                android:textColor="#FFFFFF"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="XX"
+                android:textColor="#FFFFFF"
+                android:textSize="21sp"
+                android:textStyle="italic" />
+
         </LinearLayout>
 
         <LinearLayout

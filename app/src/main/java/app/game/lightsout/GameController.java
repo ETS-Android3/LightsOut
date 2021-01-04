@@ -1,5 +1,7 @@
 package app.game.lightsout;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,6 +16,8 @@ public class GameController {
     ImageButton[][] buttons; // Table of the buttons used in the game.
     TextView moves; // Display of the number of moves completed
     TextView minMoves; // Display of the minimum number of moves to win.
+    TextView points;
+    int pointCount;
 
     /**
      * Constructor of a game object
@@ -21,13 +25,15 @@ public class GameController {
      * @param moves - Display for the number of moves performed
      * @param minMoves - Display for the minimum number of moves to win
      */
-    public GameController(ImageButton[][] buttonsArray, TextView moves, TextView minMoves){
+    public GameController(ImageButton[][] buttonsArray, TextView moves,TextView minMoves,  TextView points, int pointCount){
         buttons = buttonsArray; // Initializes the buttons array.
         board = new Board(buttons.length, buttons[0].length); // Creates a board object of the desired size (matching the buttons table)
         board.randomize(); // Randomizes the given board
         copyOfBoard = new Board(board); // Creates a copy of the board in case the user wishes to reset.
         this.moves = moves; // Sets the location to display the number of moves.
         this.minMoves = minMoves; // Sets the location to display the minimum number of moves.
+        this.points = points;
+        this.pointCount = pointCount;
         updateView(); // Updates the view so the cells match the board.
     }
 
@@ -38,12 +44,14 @@ public class GameController {
      * @param minMoves - Display for the minimum number of moves to win
      * @param board - A board that gets displayed on the board.
      */
-    public GameController(ImageButton[][] buttonsArray, TextView moves, TextView minMoves, Board board){
+    public GameController(ImageButton[][] buttonsArray, TextView moves, TextView minMoves, TextView points, Board board, int pointCount){
         buttons = buttonsArray; // Initializes the buttons array.
         this.board = board; // Assigns the board to match that in the paramter.
         copyOfBoard = new Board(board); // Creates a copy of the board in case the user wishes to reset.
         this.moves = moves; // Sets the location to display the number of moves.
         this.minMoves = minMoves; // Sets the location to display the minimum number of moves.
+        this.points = points;
+        this.pointCount = pointCount;
         updateView(); // Updates the view so the cells match the board.
     }
 
@@ -72,6 +80,14 @@ public class GameController {
         }
         moves.setText(Integer.toString(board.getMoves())); // Displays the current number of moves
         minMoves.setText(Integer.toString(board.getMinMoves())); // Displays the minimum number of moves.
+        points.setText(Integer.toString(pointCount));
+    }
+
+    /**
+     * Updates a user's point counts.
+     */
+    public void updatePoints(int newPoints){
+        this.pointCount = newPoints;
     }
 
     /**
@@ -146,6 +162,15 @@ public class GameController {
         // If the user gets far more than the requirement, we encourage them to replay to learn the game.
         else{
             return "Keep trying! You'll get better as you play.";
+        }
+    }
+
+    public int getBonusPoints(){
+        if (board.getMoves() < board.getMinMoves()){
+            return 5;
+        }
+        else{
+            return 0;
         }
     }
 }

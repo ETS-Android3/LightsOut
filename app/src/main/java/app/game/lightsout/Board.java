@@ -160,12 +160,6 @@ public class Board {
     public int getWidth(){return board[0].length;}
 
     /**
-     * Getter for the representation of a board.
-     * @return - The table of cells that represents the board.
-     */
-    public Cell[][] getBoard(){ return board; }
-
-    /**
      * Gets the cell at a given position
      * @param i - The vertical position on the board to be retrieved
      * @param j - The horizontal position on the board to be retrieved
