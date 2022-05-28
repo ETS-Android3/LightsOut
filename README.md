@@ -1,3 +1,5 @@
+**This project is no longer being worked on and is being replaced with a React Native version later this year. I created this version in my second year, so I'd like to make a vastly superior version with what I've learned since then.**
+
 ![Header](images/header.png)
 
 ## Description
